@@ -6,8 +6,8 @@ double withdraw(double balance);
 
 int main()
 {
-  std::string real_password = "whahid"; //>>> User Real password
-  std::string input_password;           //>>> User Input Password
+  std::string real_password = "joy-cst"; //>>> User Real password
+  std::string input_password;            //>>> User Input Password
 
   do
   {
@@ -15,17 +15,16 @@ int main()
     std::cout << "Enter Your Password: ";
     std::cin >> input_password;
 
-    if (real_password == input_password)
+    while (real_password != input_password)
     {
-      std::cout << "\n:::::::::::::: Wellcome ::::::::::::::\n";
-    }
-    else
-    {
-      std::cout << "incorrect password...\n";
+      std::cout << "\n!!! Incorrect Password !!!\n";
       std::cout << "Please, Try Again: ";
       std::cin >> input_password;
     }
+
   } while (input_password != real_password);
+
+  std::cout << "\n:::::::::::::: Wellcome ::::::::::::::\n";
 
   int command = 0;   //>>> Choise commmand Input
   int balance = 12;  //>>> Bank balance
