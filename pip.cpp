@@ -22,7 +22,7 @@ int main()
     else
     {
       std::cout << "incorrect password...\n";
-      std::cout << "Please, Try Again\n";
+      std::cout << "Please, Try Again: ";
       std::cin >> input_password;
     }
   } while (input_password != real_password);
