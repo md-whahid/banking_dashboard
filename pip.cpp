@@ -6,6 +6,27 @@ double withdraw(double balance);
 
 int main()
 {
+  std::string real_password = "nmhhsaw@1263"; //>>> User Real password
+  std::string input_password;                 //>>> User Input Password
+
+  do
+  {
+    std::cout << "Wellcome to our Bank\n";
+    std::cout << "Enter Your Password: ";
+    std::cin >> input_password;
+
+    if (real_password == input_password)
+    {
+      std::cout << "Wellcome::::::::::::::::::::\n";
+    }
+    else
+    {
+      std::cout << "incorrect password...\n";
+      std::cout << "Please, Try Again\n";
+      std::cin >> input_password;
+    }
+  } while (input_password != real_password);
+
   int command = 0;   //>>> Choise commmand Input
   int balance = 0;   //>>> Bank balance
   int condition = 0; //>>> While loop Condition
@@ -28,11 +49,11 @@ int main()
     }
     else if (command == 2)
     {
-      balance += diposit(balance);
+      balance = diposit(balance);
     }
     else if (command == 3)
     {
-      balance -= withdraw(balance);
+      balance = withdraw(balance);
     }
     else if (command == 4)
     {
@@ -63,6 +84,13 @@ double diposit(double balance)
   std::cout << "\n::::::::::::::::::::::::::::::\n"
             << "Enter Ammount: ";
   std::cin >> ammount;
+
+  while (ammount < 10)
+  {
+    std::cout << "You Have to Deposite Minimum 10$\n";
+    std::cout << "So, Enter Amount Again: ";
+    std::cin >> ammount;
+  }
 
   balance += ammount;
   std::cout << "Your Currrent Balance is: $ " << balance << "\n"
